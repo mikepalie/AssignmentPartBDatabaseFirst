@@ -11,7 +11,9 @@ namespace AssignmentPartBDatabaseFirst
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +22,9 @@ namespace AssignmentPartBDatabaseFirst
             this.Assignments = new HashSet<Assignment>();
             this.Courses = new HashSet<Course>();
         }
-    
+
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

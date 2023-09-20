@@ -164,8 +164,19 @@ namespace AssignmentPartBDatabaseFirst
                 Console.WriteLine($"{ student.LastName}");
                 Console.ResetColor();
             }
-                
 
+            //insert trainer from the keyboard
+            Trainer tr = new Trainer();
+            Console.WriteLine("Enter Trainer's Firstname:");
+            tr.FirstName = Console.ReadLine();
+            Console.WriteLine("Enter Trainer's Lastname:");
+            tr.LastName = Console.ReadLine();
+            Console.WriteLine("Enter Trainer's Subject:");
+            tr.Subject = Console.ReadLine();
+            Console.WriteLine("Enter Trainer's ID:");
+            tr.TrainerID = Convert.ToInt32(Console.ReadLine());
+            db.Trainers.Add(tr);
+            db.SaveChanges();
         }
     }
 }
